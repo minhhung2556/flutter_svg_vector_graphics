@@ -17,7 +17,7 @@ import 'package:vector_graphics_codec/vector_graphics_codec.dart';
 import 'caching_test.dart';
 
 void main() {
-  late PictureInfo pictureInfo;
+  late PictureInfo? pictureInfo;
 
   tearDown(() {
     // Since we don't always explicitly dispose render objects in unit tests, manually clear
@@ -40,7 +40,7 @@ void main() {
 
   test('Rasterizes a picture to a draw image call', () async {
     final RenderVectorGraphic renderVectorGraphic = RenderVectorGraphic(
-      pictureInfo,
+      pictureInfo!,
       'test',
       null,
       1.0,
@@ -61,7 +61,7 @@ void main() {
 
   test('Multiple render objects with the same scale share a raster', () async {
     final RenderVectorGraphic renderVectorGraphicA = RenderVectorGraphic(
-      pictureInfo,
+      pictureInfo!,
       'test',
       null,
       1.0,
@@ -69,7 +69,7 @@ void main() {
       1.0,
     );
     final RenderVectorGraphic renderVectorGraphicB = RenderVectorGraphic(
-      pictureInfo,
+      pictureInfo!,
       'test',
       null,
       1.0,
