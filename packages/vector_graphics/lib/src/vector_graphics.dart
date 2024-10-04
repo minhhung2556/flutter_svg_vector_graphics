@@ -675,7 +675,7 @@ class VectorGraphicUtilities {
   ///
   /// It is the caller's responsibility to handle disposing the picture when
   /// they are done with it.
-  Future<PictureInfo> loadPicture(
+  Future<PictureInfo?> loadPicture(
     BytesLoader loader,
     BuildContext? context, {
     bool clipViewbox = true,
